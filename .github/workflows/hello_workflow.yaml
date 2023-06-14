@@ -1,9 +1,17 @@
+# The 'name' keyword sets the name of the workflow
 name: hello_workflow
+# The 'on' keyword specifies when the workflow will be executed.
+# The workflow here is executed when you push something into your repository.
 on: [push]
+# List all the jobs you want to run
 jobs:
   print-hello:
+  # The 'runs-on' keyword specifies the virtual environment in which your workflow should run.
     runs-on: ubuntu-latest
+    # The steps are executed sequentially.
+    # You can specify the name of the step with the name keyword, which will be logged as the step name once the workflow is completed.
     steps:
+    # checks out your repo to the runner so that the workflow can access the repo. @v3 - version of the checkout package tha should be used.
       - uses: actions/checkout@v3
       - name: Hello world using echo
         run: echo "$(<hello.txt)"
