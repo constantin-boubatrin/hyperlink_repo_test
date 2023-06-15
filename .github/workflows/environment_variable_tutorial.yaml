@@ -14,5 +14,9 @@ jobs:
         env:
           # This custom environment variable is available to only this specific step
           platform: the platform
-        # Referencing the environment variables
+        # Referencing the environment variables used interpolation and variable reference
+        # Ubuntu runner: $VARIABLE_NAME
+        # macOS runner: $VARIABLE_NAME
+        # Windows runner: $env:VARIABLE_NAME
+        # Env. var. that is independent of all runners use interpolation ${{ env.VARIABLE_NAME }}
         run: echo "Welcome to the ${{env.TOPIC}} topic from $section section at $platform"
