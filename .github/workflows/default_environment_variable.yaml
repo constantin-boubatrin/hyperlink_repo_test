@@ -1,0 +1,12 @@
+name: env_tutorial
+on: [push] 
+jobs:
+  job1:
+    runs-on: macos-latest 
+    steps:
+      - name: step 1
+        run: |
+          echo "The job ID is $GITHUB_JOB"   
+          echo "The name of the event triggered by the workflow is $GITHUB_EVENT_NAME"  
+          echo "The name of the workflow is $GITHUB_WORKFLOW" 
+          echo "The runner of the workflow is $RUNNER_OS"
