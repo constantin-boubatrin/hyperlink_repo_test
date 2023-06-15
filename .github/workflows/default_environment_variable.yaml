@@ -5,6 +5,7 @@ jobs:
     runs-on: macos-latest 
     steps:
       - name: step 1
+        # Using the variable reference to access the default environment variables ($VARIABLE_NAME)
         run: |
           echo "The job ID is $GITHUB_JOB"   
           echo "The name of the event triggered by the workflow is $GITHUB_EVENT_NAME"  
