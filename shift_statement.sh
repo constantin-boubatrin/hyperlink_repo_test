@@ -12,6 +12,7 @@ do
             ((total_score++))
             ;;
         #Case 2
+        #multiple arguments in a condition ("-" or "--") using "|" bitwise operator
         "-"|"--")
             ;;
         #Default case
@@ -23,6 +24,7 @@ do
     #command shifts the arguments to the left, so after each shift 1, 
     #the value of {$1} changes to the next argument.
     #Default value of shift is 1 if we don't provide it
+    #instead of using ${1}, ${2}, ${3} for arguments we are using shift 1
     shift 1
 done
 
